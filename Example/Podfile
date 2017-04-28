@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ZUICollectionViewHeaderHoveringFlowLayout_Example' do
+  pod 'ZUICollectionViewHeaderHoveringFlowLayout', :path => '../'
+
+  target 'ZUICollectionViewHeaderHoveringFlowLayout_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
