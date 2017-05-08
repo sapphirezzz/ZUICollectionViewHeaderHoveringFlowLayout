@@ -1,0 +1,6 @@
+framework module Pods_ZUICollectionViewHeaderHoveringFlowLayout_Tests {
+  umbrella header "Pods-ZUICollectionViewHeaderHoveringFlowLayout_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}
