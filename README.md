@@ -22,7 +22,7 @@ pod "ZUICollectionViewHeaderHoveringFlowLayout"
 
 ## Author
 
-ZackZheng2014, zackzheng@mooyoo.com.cn
+ZackZheng, zhengzuanzhe@gmail.com
 
 ## License
 
