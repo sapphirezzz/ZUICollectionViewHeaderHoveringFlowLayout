@@ -12,25 +12,25 @@ public class ZUICollectionViewHeaderHoveringFlowLayout: UICollectionViewFlowLayo
     
     @IBInspectable public var sectionToHover: Int = 0
     
-    override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
+    public override func layoutAttributesForElementsInRect(rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
-        let superAttributes = super.layoutAttributesForElements(in: rect) ?? []
+        let superAttributes = super.layoutAttributesForElementsInRect(rect) ?? []
         guard let collectionView = collectionView else {return superAttributes}
         
-        let attributes = insertNoneHeaderSections(noneHeaderSection: sectionToHover, superAttributes: superAttributes)
+        let attributes = insertNoneHeaderSections(sectionToHover, superAttributes: superAttributes)
         
         let finalAttributes: [UICollectionViewLayoutAttributes] = attributes.map { attribute in
             
             if attribute.representedElementKind == UICollectionElementKindSectionHeader && sectionToHover == attribute.indexPath.section {
                 
-                let numberOfItemsInSection = collectionView.numberOfItems(inSection: attribute.indexPath.section)
-                
+                let numberOfItemsInSection = collectionView.numberOfItemsInSection(attribute.indexPath.section)
+
                 var firstItemAttribute: UICollectionViewLayoutAttributes = UICollectionViewLayoutAttributes()
                 
                 if numberOfItemsInSection > 0 {
                     
-                    let firstItemIndexPath = IndexPath(item: 0, section: attribute.indexPath.section)
-                    firstItemAttribute = layoutAttributesForItem(at: firstItemIndexPath)!
+                    let firstItemIndexPath = NSIndexPath(forItem: 0, inSection: attribute.indexPath.section)
+                    firstItemAttribute = layoutAttributesForItemAtIndexPath(firstItemIndexPath)!
                 }else {
                     
                     let y = attribute.frame.maxY + self.sectionInset.top
@@ -42,7 +42,7 @@ public class ZUICollectionViewHeaderHoveringFlowLayout: UICollectionViewFlowLayo
                 
                 let sectionInsetTop: CGFloat = {
                     
-                    if let inset = (collectionView.delegate as? UICollectionViewDelegateFlowLayout)?.collectionView?(collectionView, layout: self, insetForSectionAt: attribute.indexPath.section) {
+                    if let inset = (collectionView.delegate as? UICollectionViewDelegateFlowLayout)?.collectionView?(collectionView, layout: self, insetForSectionAtIndex: attribute.indexPath.section) {
                         return inset.top
                     }else {
                         return self.sectionInset.top
@@ -68,14 +68,14 @@ public class ZUICollectionViewHeaderHoveringFlowLayout: UICollectionViewFlowLayo
     private func insertNoneHeaderSections(noneHeaderSection: Int, superAttributes: [UICollectionViewLayoutAttributes]) -> [UICollectionViewLayoutAttributes] {
         
         var attributes = superAttributes
-        let indexPath = IndexPath(item: 0, section: noneHeaderSection)
-        if let attribute = layoutAttributesForSupplementaryView(ofKind: UICollectionElementKindSectionHeader, at: indexPath) {
+        let indexPath = NSIndexPath(forItem: 0, inSection: noneHeaderSection)
+        if let attribute = layoutAttributesForSupplementaryViewOfKind(UICollectionElementKindSectionHeader, atIndexPath: indexPath) {
             attributes.append(attribute)
         }
         return attributes
     }
     
-    override public func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
+    public override func shouldInvalidateLayoutForBoundsChange(newBounds: CGRect) -> Bool {
         return true
     }
 }
