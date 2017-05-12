@@ -20,6 +20,12 @@ it, simply add the following line to your Podfile:
 pod "ZUICollectionViewHeaderHoveringFlowLayout"
 ```
 
+if you are using Swift 2.3, add the following line to your Podfile instead:
+
+```ruby
+pod "ZUICollectionViewHeaderHoveringFlowLayout", '0.0.9'
+```
+
 ## Author
 
 ZackZheng, zhengzuanzhe@gmail.com
