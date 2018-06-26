@@ -1,16 +1,16 @@
 PODS:
-  - ZUICollectionViewHeaderHoveringFlowLayout (0.1.1)
+  - ZUICollectionViewHeaderHoveringFlowLayout (0.1.2)
 
 DEPENDENCIES:
   - ZUICollectionViewHeaderHoveringFlowLayout (from `../`)
 
 EXTERNAL SOURCES:
   ZUICollectionViewHeaderHoveringFlowLayout:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  ZUICollectionViewHeaderHoveringFlowLayout: b3c31041290922c82931de3045da5b1f70cc5a9d
+  ZUICollectionViewHeaderHoveringFlowLayout: 08999ad236293560922a6685ab5d7a2f0cc45e36
 
-PODFILE CHECKSUM: e9c2dd6c44685edcc478242966a7982dd0c48303
+PODFILE CHECKSUM: caf8b1e9a0f33dee0e4f60c1ef25f94daf7306e5
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3

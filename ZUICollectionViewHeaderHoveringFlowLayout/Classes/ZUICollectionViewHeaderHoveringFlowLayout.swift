@@ -10,7 +10,7 @@ import UIKit
 
 public class ZUICollectionViewHeaderHoveringFlowLayout: UICollectionViewFlowLayout {
     
-    @IBInspectable public var sectionToHover: Int = 0
+    @IBInspectable public var sectionToHover: Int = -1
     
     override public func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
         
@@ -68,6 +68,10 @@ public class ZUICollectionViewHeaderHoveringFlowLayout: UICollectionViewFlowLayo
     private func insertNoneHeaderSections(noneHeaderSection: Int, superAttributes: [UICollectionViewLayoutAttributes]) -> [UICollectionViewLayoutAttributes] {
         
         var attributes = superAttributes
+        
+        // 因为在iOS 9.3，当layoutAttributesForSupplementaryView方法传入的参数indexPath不存在时，会崩溃而不是返回nil，所以这里加了判断
+        guard let sectionCount = collectionView?.numberOfSections, noneHeaderSection < sectionCount else { return attributes }
+
         let indexPath = IndexPath(item: 0, section: noneHeaderSection)
         if let attribute = layoutAttributesForSupplementaryView(ofKind: UICollectionElementKindSectionHeader, at: indexPath) {
             attributes.append(attribute)

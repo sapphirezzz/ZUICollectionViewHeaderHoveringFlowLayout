@@ -1,22 +1,22 @@
 {
   "name": "ZUICollectionViewHeaderHoveringFlowLayout",
-  "version": "0.1.1",
-  "summary": "A short description of ZUICollectionViewHeaderHoveringFlowLayout.",
-  "description": "TODO: Add long description of the pod here.",
+  "version": "0.1.2",
+  "summary": "用于UICollectionView实现任意Header置顶的FlowLayout.",
+  "description": "用于UICollectionView实现任意Header置顶的FlowLayout.",
   "homepage": "https://github.com/sapphirezzz/ZUICollectionViewHeaderHoveringFlowLayout",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
   "authors": {
-    "sapphirezzz": "zhengzuanzhe@gmail.com"
+    "zackzheng": "zhengzuanzhe@gmail.com"
   },
   "source": {
     "git": "https://github.com/sapphirezzz/ZUICollectionViewHeaderHoveringFlowLayout.git",
-    "tag": "0.1.1"
+    "tag": "0.1.2"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
   "source_files": "ZUICollectionViewHeaderHoveringFlowLayout/Classes/**/*",
   "frameworks": "UIKit"
