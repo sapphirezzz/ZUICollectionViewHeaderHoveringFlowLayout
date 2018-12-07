@@ -8,14 +8,8 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZUICollectionViewHeaderHoveringFlowLayout'
-  s.version          = '0.1.3'
+  s.version          = '0.2.0'
   s.summary          = '用于UICollectionView实现任意Header置顶的FlowLayout.'
-
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
 用于UICollectionView实现任意Header置顶的FlowLayout.
@@ -25,7 +19,8 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'zackzheng' => 'zhengzuanzhe@gmail.com' }
   s.source           = { :git => 'https://github.com/sapphirezzz/ZUICollectionViewHeaderHoveringFlowLayout.git', :tag => s.version.to_s }
-
+  
+  s.swift_version = '4.2'
   s.ios.deployment_target = '9.0'
   s.source_files = 'ZUICollectionViewHeaderHoveringFlowLayout/Classes/**/*'
   s.frameworks = 'UIKit'

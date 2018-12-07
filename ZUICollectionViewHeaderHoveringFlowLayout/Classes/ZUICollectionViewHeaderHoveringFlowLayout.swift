@@ -21,7 +21,7 @@ public class ZUICollectionViewHeaderHoveringFlowLayout: UICollectionViewFlowLayo
         
         let finalAttributes: [UICollectionViewLayoutAttributes] = attributes.map { attribute in
             
-            if attribute.representedElementKind == UICollectionElementKindSectionHeader && sectionToHover == attribute.indexPath.section {
+            if attribute.representedElementKind == UICollectionView.elementKindSectionHeader && sectionToHover == attribute.indexPath.section {
                 
                 let numberOfItemsInSection = collectionView.numberOfItems(inSection: attribute.indexPath.section)
                 
@@ -73,7 +73,7 @@ public class ZUICollectionViewHeaderHoveringFlowLayout: UICollectionViewFlowLayo
         guard let sectionCount = collectionView?.numberOfSections, noneHeaderSection >= 0, noneHeaderSection < sectionCount else { return attributes }
 
         let indexPath = IndexPath(item: 0, section: noneHeaderSection)
-        if let attribute = layoutAttributesForSupplementaryView(ofKind: UICollectionElementKindSectionHeader, at: indexPath) {
+        if let attribute = layoutAttributesForSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, at: indexPath) {
             attributes.append(attribute)
         }
         return attributes

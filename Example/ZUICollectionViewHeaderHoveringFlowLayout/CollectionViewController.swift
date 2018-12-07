@@ -19,8 +19,8 @@ class CollectionViewController: UICollectionViewController {
         
         (collectionView?.collectionViewLayout as? ZUICollectionViewHeaderHoveringFlowLayout)?.sectionToHover = 2
         
-        collectionView?.register(ReusableHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "ReusableHeaderView")
-        collectionView?.register(ReusableHeaderView.self, forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, withReuseIdentifier: "ReusableHeaderView")
+        collectionView?.register(ReusableHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "ReusableHeaderView")
+        collectionView?.register(ReusableHeaderView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "ReusableHeaderView")
     }
 }
 
