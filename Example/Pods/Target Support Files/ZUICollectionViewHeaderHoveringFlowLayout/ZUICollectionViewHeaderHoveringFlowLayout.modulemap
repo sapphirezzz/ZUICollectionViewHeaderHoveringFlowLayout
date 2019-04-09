@@ -1,6 +1,0 @@
-framework module ZUICollectionViewHeaderHoveringFlowLayout {
-  umbrella header "ZUICollectionViewHeaderHoveringFlowLayout-umbrella.h"
-
-  export *
-  module * { export * }
-}
